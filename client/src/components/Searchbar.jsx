@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function BasicTextFields() {
+export default function BasicTextFields(props) {
   const classes = useStyles();
 
   return (
@@ -31,6 +31,7 @@ export default function BasicTextFields() {
             id="filled-basic"
             label="Search for a Book"
             variant="filled"
+            onChange={props.handleInputChange}
           />
         </form>
       </Grid>
