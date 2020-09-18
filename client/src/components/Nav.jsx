@@ -77,6 +77,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Nav() {
+  const classes = useStyles();
   return (
     <AppBar
       position="static"
@@ -91,42 +92,26 @@ export default function Nav() {
           noWrap
           className={classes.toolbarTitle}
         >
-          Company name
+          Google Book Search
         </Typography>
         <nav>
           <Link
             variant="button"
             color="textPrimary"
-            href="#"
+            href="/"
             className={classes.link}
           >
-            Features
+            Search
           </Link>
           <Link
             variant="button"
             color="textPrimary"
-            href="#"
+            href="/saved"
             className={classes.link}
           >
-            Enterprise
-          </Link>
-          <Link
-            variant="button"
-            color="textPrimary"
-            href="#"
-            className={classes.link}
-          >
-            Support
+            Saved
           </Link>
         </nav>
-        <Button
-          href="#"
-          color="primary"
-          variant="outlined"
-          className={classes.link}
-        >
-          Login
-        </Button>
       </Toolbar>
     </AppBar>
   );
