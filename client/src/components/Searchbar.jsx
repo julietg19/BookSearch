@@ -32,7 +32,9 @@ export default function BasicTextFields(props) {
             label="Search for a Book"
             variant="filled"
             onChange={props.handleInputChange}
+            //onSubmit={props.handleOnSubmit}
           />
+          <button onClick={props.handleOnSubmit}>Search</button>
         </form>
       </Grid>
     </Grid>
