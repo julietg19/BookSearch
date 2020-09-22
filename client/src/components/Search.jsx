@@ -17,6 +17,26 @@ export default class Search extends Component {
       console.log(this.state.books);
     });
   };
+  newBook = (bookData) => {
+    return {
+      _id: bookData.id,
+      title: bookData.volumeInfo.title,
+      authors: bookData.volumeInfo.authors,
+      description: bookData.volumeInfo.description,
+      image: bookData.volumeInfo.imageLinks.thumbnail,
+      link: bookData.volumeInfo.previewLink,
+    };
+  };
+  saveBook = (book) => {
+    let someBook = this.newBook(book);
+    API.saveBook(someBook)
+      .then(() => {
+        console.log(someBook);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   render() {
     return (
@@ -27,7 +47,19 @@ export default class Search extends Component {
         />
         <div>
           {this.state.books.map((book) => {
-            return <Searchlist key={book.id} book={book} saveBook={this.saveBook} />;
+            return (
+              // <Searchlist key={book.id} book={book} saveBook={this.saveBook} />
+              <div>
+                <h3>{book.volumeInfo.title}</h3>
+                <h6>Book written by {book.volumeInfo.authors}</h6>
+                <img src={book.volumeInfo.imageLinks.thumbnail} />
+                <p>{book.volumeInfo.description}</p>
+                <a href={book.volumeInfo.previewLink} target="_blank">
+                  View
+                </a>
+                <button onClick={() => this.saveBook(book)}>Save</button>
+              </div>
+            );
           })}
         </div>
       </div>

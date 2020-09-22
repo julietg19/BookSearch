@@ -18,14 +18,14 @@ export default function BasicTextFields(props) {
   return (
     <Grid
       container
-      // spacing={0}
+      spacing={3}
       direction="column"
       alignItems="center"
       justify="center"
       // style={{ width: "80%" }}
       // style={{ minHeight: "100vh" }}
     >
-      <Grid item>
+      <Grid item xs={12}>
         <form className={classes.root} noValidate autoComplete="off">
           <TextField
             id="filled-basic"
