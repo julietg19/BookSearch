@@ -29,6 +29,7 @@ export default class Search extends Component {
   };
   saveBook = (book) => {
     let someBook = this.newBook(book);
+    console.log(someBook);
     API.saveBook(someBook)
       .then(() => {
         console.log(someBook);
@@ -49,7 +50,7 @@ export default class Search extends Component {
           {this.state.books.map((book) => {
             return (
               // <Searchlist key={book.id} book={book} saveBook={this.saveBook} />
-              <div>
+              <div key={book.id}>
                 <h3>{book.volumeInfo.title}</h3>
                 <h6>Book written by {book.volumeInfo.authors}</h6>
                 <img src={book.volumeInfo.imageLinks.thumbnail} />
