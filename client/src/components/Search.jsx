@@ -53,7 +53,7 @@ export default class Search extends Component {
               <div key={book.id}>
                 <h3>{book.volumeInfo.title}</h3>
                 <h6>Book written by {book.volumeInfo.authors}</h6>
-                <img src={book.volumeInfo.imageLinks.thumbnail} />
+                {/* <img src={book.volumeInfo.imageLinks.thumbnail} alt="thumbnail" /> */}
                 <p>{book.volumeInfo.description}</p>
                 <a href={book.volumeInfo.previewLink} target="_blank">
                   View
